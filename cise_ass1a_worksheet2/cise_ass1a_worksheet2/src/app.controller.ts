@@ -11,13 +11,13 @@ export class AppController {
     return this.appService.getHello();
   }
 
-  @Get('api/articles')
+  @Get('/api/articles')
   getArticles(): any[] {
     return ARTICLES;
   }
 
   @Get('/api/articles/:id')
-  getArticlesById(@Param('_id') id: string): any[] {
-    return ARTICLES.find((n) => n.id === id);
+  getArticlesById(@Param('id') id: string): any[] {
+    return ARTICLES.find((n) => n._id === id);
   }
 }
